@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<% if @user.pizzas.any? %>
+      <h3>Microposts (<%= @user.pizzas.count %>)</h3>
+      <ol>
+        <%= render @pizzas %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
